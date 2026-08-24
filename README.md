@@ -22,7 +22,7 @@ npm --version
 Cloner le dépôt, installer les dépendances, puis lancer le serveur de développement :
 
 ```bash
-git clone <url-du-depot>
+git clone https://github.com/fordimalanda/ggea
 cd ggea
 npm install
 npm run dev
