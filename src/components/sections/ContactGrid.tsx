@@ -173,7 +173,7 @@ export default function ContactGrid() {
               href="tel:+243000000000"
               className="text-white font-semibold hover:text-emerald-400 transition-colors"
             >
-              +243 000 000 000
+              +243 85 44 55 818
             </a>
           </div>
         </div>
