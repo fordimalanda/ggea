@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { MapPin, Phone, Mail, Clock } from "lucide-react";
 
 function WhatsAppIcon({ className }: { className?: string }) {
@@ -35,9 +36,13 @@ export default function Footer() {
           {/* Brand */}
           <div className="lg:col-span-2">
             <div className="flex items-center gap-3 mb-4">
-              <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-emerald-500 to-teal-600 flex items-center justify-center shadow-lg shadow-emerald-500/30">
-                <span className="text-white font-black text-sm">G</span>
-              </div>
+              <Image
+                src="/logo.png"
+                alt="Logo GGEA"
+                width={96}
+                height={64}
+                className="h-14 w-20 object-contain"
+              />
               <div>
                 <div className="text-white font-bold text-lg leading-tight">GGEA</div>
                 <div className="text-slate-500 text-xs">Garage Général Electronique Automobile</div>
