@@ -15,7 +15,7 @@ export async function POST(request: Request) {
     }
 
     const { nom, telephone, modele, date, adresse, notes } = result.data;
-    const { data, error } = await supabaseServer
+    const { error } = await supabaseServer
       .from("bookings")
       .insert({
         full_name: nom,
@@ -25,19 +25,23 @@ export async function POST(request: Request) {
         preferred_date: date,
         notes: notes || null,
         status: "en_attente",
-      })
-      .select("id, created_at, status")
-      .single();
+      });
 
     if (error) {
-      console.error("Erreur lors de la création de la réservation:", error);
+      console.error(
+        `Erreur lors de la création de la réservation: ${String(error)} | ` +
+          `message=${error.message} code=${error.code} details=${error.details} hint=${error.hint}`
+      );
       return NextResponse.json(
         { error: "La réservation n'a pas pu être enregistrée." },
         { status: 500 }
       );
     }
 
-    return NextResponse.json({ booking: data }, { status: 201 });
+    return NextResponse.json(
+      { message: "Réservation enregistrée avec succès." },
+      { status: 201 }
+    );
   } catch (error) {
     console.error("Erreur API bookings:", error);
     return NextResponse.json(
