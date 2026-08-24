@@ -1,4 +1,12 @@
-import { MapPin, Phone, Mail, Clock, MessageCircle } from "lucide-react";
+import { MapPin, Phone, Mail, Clock } from "lucide-react";
+
+function WhatsAppIcon({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+      <path d="M20.52 3.48A11.87 11.87 0 0012.08 0C5.54 0 .22 5.32.22 11.86c0 2.09.55 4.13 1.6 5.93L.12 24l6.35-1.67a11.86 11.86 0 005.61 1.43h.01c6.54 0 11.86-5.32 11.86-11.86 0-3.17-1.23-6.15-3.43-8.42zM12.09 21.76h-.01a9.86 9.86 0 01-5.03-1.38l-.36-.21-3.77.99 1.01-3.67-.23-.38a9.85 9.85 0 01-1.51-5.25c0-5.44 4.43-9.86 9.87-9.86 2.64 0 5.12 1.03 6.99 2.9a9.82 9.82 0 012.89 6.99c0 5.44-4.43 9.87-9.85 9.87zm5.41-7.39c-.3-.15-1.77-.87-2.05-.97-.28-.1-.48-.15-.68.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.48-.89-.79-1.49-1.77-1.66-2.07-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.68-1.64-.93-2.25-.24-.59-.49-.51-.68-.52h-.58c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.5 0 1.47 1.07 2.9 1.22 3.1.15.2 2.1 3.21 5.1 4.5.71.31 1.27.49 1.7.63.71.23 1.36.2 1.87.12.57-.08 1.77-.72 2.02-1.42.25-.7.25-1.3.17-1.42-.07-.13-.27-.2-.57-.35z" />
+    </svg>
+  );
+}
 
 function FacebookIcon({ className }: { className?: string }) {
   return (
@@ -42,7 +50,7 @@ export default function Footer() {
             {/* Social links */}
             <div className="flex gap-3">
               {[
-                { icon: MessageCircle, href: "https://wa.me/243000000000", label: "WhatsApp", color: "hover:bg-emerald-500/20 hover:border-emerald-500/50 hover:text-emerald-400" },
+                { icon: WhatsAppIcon, href: "https://wa.me/243000000000", label: "WhatsApp", color: "hover:bg-emerald-500/20 hover:border-emerald-500/50 hover:text-emerald-400" },
                 { icon: FacebookIcon, href: "https://facebook.com/GGEAKinshasa", label: "Facebook", color: "hover:bg-blue-500/20 hover:border-blue-500/50 hover:text-blue-400" },
                 { icon: InstagramIcon, href: "https://instagram.com/ggea.kinshasa", label: "Instagram", color: "hover:bg-pink-500/20 hover:border-pink-500/50 hover:text-pink-400" },
               ].map(({ icon: Icon, href, label, color }) => (
