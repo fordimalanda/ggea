@@ -51,8 +51,8 @@ export default function Footer() {
             <div className="flex gap-3">
               {[
                 { icon: WhatsAppIcon, href: "https://wa.me/243829688222", label: "WhatsApp", color: "hover:bg-emerald-500/20 hover:border-emerald-500/50 hover:text-emerald-400" },
-                { icon: FacebookIcon, href: "https://facebook.com/GGEAKinshasa", label: "Facebook", color: "hover:bg-blue-500/20 hover:border-blue-500/50 hover:text-blue-400" },
-                { icon: InstagramIcon, href: "https://instagram.com/ggea.kinshasa", label: "Instagram", color: "hover:bg-pink-500/20 hover:border-pink-500/50 hover:text-pink-400" },
+                { icon: FacebookIcon, href: "https://www.facebook.com/profile.php?id=61593497135212", label: "Facebook", color: "hover:bg-blue-500/20 hover:border-blue-500/50 hover:text-blue-400" },
+                { icon: InstagramIcon, href: "https://www.instagram.com/garage_ggea/", label: "Instagram", color: "hover:bg-pink-500/20 hover:border-pink-500/50 hover:text-pink-400" },
               ].map(({ icon: Icon, href, label, color }) => (
                 <a
                   key={label}
