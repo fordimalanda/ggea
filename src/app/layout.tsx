@@ -9,9 +9,17 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "GGEA — Checking Automobile à Domicile à Kinshasa | Diagnostic $35",
+  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000"),
+  title: "GGEA — Garage & Services Automobiles",
   description:
-    "GGEA (Garage Général Electronique Automobile) — Service de checking et diagnostic automobile à domicile à Kinshasa, DRC. Déplacement gratuit ($0), diagnostic complet à $35. Évitez les mauvaises surprises avant d'acheter ou partir en voyage.",
+    "GGEA — Garage Général Electronique Automobile à Kinshasa. Diagnostic professionnel et services automobiles à domicile, avec déplacement gratuit.",
+  icons: {
+    icon: [
+      { url: "/favicon.ico", type: "image/x-icon" },
+      { url: "/favicon.svg", type: "image/svg+xml" },
+    ],
+    apple: "/apple-icon.png",
+  },
   keywords: [
     "checking automobile Kinshasa",
     "diagnostic voiture Kinshasa",
@@ -23,12 +31,20 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: "GGEA — Garage Général Electronique Automobile" }],
   openGraph: {
-    title: "GGEA — Checking Automobile à Domicile à Kinshasa",
+    title: "GGEA — Garage & Services Automobiles",
     description:
-      "Diagnostic professionnel à votre domicile. Déplacement $0 | Diagnostic Complet $35. Kinshasa, DRC.",
+      "Diagnostic professionnel et services automobiles à domicile à Kinshasa. Déplacement gratuit.",
     type: "website",
     locale: "fr_CD",
     siteName: "GGEA",
+    images: [
+      {
+        url: "/opengraph-image.png",
+        width: 512,
+        height: 512,
+        alt: "Logo GGEA — Garage Général Electronique Automobile",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",

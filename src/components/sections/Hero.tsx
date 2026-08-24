@@ -42,13 +42,24 @@ export default function Hero() {
 
       {/* Content */}
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center py-24">
+        <div className="hero-fade-in mb-6 flex justify-center">
+          <Image
+            src="/logo.png"
+            alt="GGEA — Garage Général Electronique Automobile"
+            width={220}
+            height={130}
+            priority
+            className="h-auto w-44 sm:w-52"
+          />
+        </div>
+
         {/* Brand pill */}
         <div className="hero-fade-in flex justify-center mb-6">
           <Badge
             variant="emerald"
             className="px-4 py-1.5 text-sm tracking-widest uppercase"
           >
-            🇨🇩 Service Certifié — Kinshasa, DRC
+            Service Certifié — Kinshasa, DRC
           </Badge>
         </div>
 
