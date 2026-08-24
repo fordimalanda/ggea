@@ -96,8 +96,8 @@ export default function Footer() {
               </li>
               <li className="flex items-center gap-3">
                 <Mail className="size-4 text-emerald-400 shrink-0" />
-                <a href="mailto:contact@ggea.cd" className="hover:text-white transition-colors">
-                  contact@ggea.cd
+                <a href="mailto:contact.ggea@gmail.com" className="hover:text-white transition-colors">
+                  contact.ggea@gmail.com
                 </a>
               </li>
               <li className="flex items-start gap-3">
