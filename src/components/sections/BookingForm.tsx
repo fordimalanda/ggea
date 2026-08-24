@@ -2,36 +2,13 @@
 
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { z } from "zod";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
+import { bookingSchema, type BookingFormData } from "@/lib/validations/booking";
 import { CalendarDays, Car, MapPin, Phone, User, CheckCircle2, Loader2 } from "lucide-react";
 import { useState } from "react";
-
-const bookingSchema = z.object({
-  nom: z
-    .string()
-    .min(2, "Le nom doit contenir au moins 2 caractères")
-    .max(60, "Nom trop long"),
-  telephone: z
-    .string()
-    .min(9, "Numéro de téléphone invalide")
-    .regex(/^[+\d\s()-]{9,20}$/, "Format de téléphone invalide"),
-  modele: z
-    .string()
-    .min(2, "Veuillez indiquer le modèle de votre véhicule")
-    .max(80, "Modèle trop long"),
-  date: z.string().min(1, "Veuillez choisir une date"),
-  adresse: z
-    .string()
-    .min(5, "Veuillez indiquer votre adresse complète")
-    .max(200, "Adresse trop longue"),
-  notes: z.string().max(500, "Notes trop longues").optional(),
-});
-
-type BookingFormData = z.infer<typeof bookingSchema>;
 
 const fieldConfig = [
   {
@@ -84,6 +61,7 @@ const fieldConfig = [
 export default function BookingForm() {
   const [submitted, setSubmitted] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
+  const [submitError, setSubmitError] = useState<string | null>(null);
 
   const {
     register,
@@ -96,28 +74,31 @@ export default function BookingForm() {
 
   const onSubmit = async (data: BookingFormData) => {
     setIsLoading(true);
-    // Simulate API call / WhatsApp pre-fill
-    await new Promise((r) => setTimeout(r, 1200));
+    setSubmitError(null);
 
-    // Build WhatsApp message
-    const msg = encodeURIComponent(
-      `*Réservation GGEA*\n\n` +
-        `👤 Nom: ${data.nom}\n` +
-        `📞 Tél: ${data.telephone}\n` +
-        `🚗 Véhicule: ${data.modele}\n` +
-        `📅 Date: ${data.date}\n` +
-        `📍 Adresse: ${data.adresse}` +
-        (data.notes ? `\n📝 Notes: ${data.notes}` : "")
-    );
+    try {
+      const response = await fetch("/api/bookings", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data),
+      });
+      const result = (await response.json()) as { error?: string };
 
-    setIsLoading(false);
-    setSubmitted(true);
-    reset();
+      if (!response.ok) {
+        throw new Error(result.error || "La réservation n'a pas pu être envoyée.");
+      }
 
-    // Open WhatsApp after short delay
-    setTimeout(() => {
-      window.open(`https://wa.me/243829688222?text=${msg}`, "_blank", "noopener,noreferrer");
-    }, 800);
+      setSubmitted(true);
+      reset();
+    } catch (error) {
+      setSubmitError(
+        error instanceof Error
+          ? error.message
+          : "Une erreur est survenue. Veuillez réessayer."
+      );
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   if (submitted) {
@@ -130,7 +111,7 @@ export default function BookingForm() {
             </div>
             <h3 className="text-2xl font-bold text-white mb-3">Réservation envoyée!</h3>
             <p className="text-slate-400 mb-6">
-              WhatsApp s&apos;ouvre pour confirmer votre réservation. Notre équipe vous contactera sous peu.
+              Votre demande a bien été enregistrée. Notre équipe vous appellera ou vous écrira sous 2h.
             </p>
             <Button onClick={() => setSubmitted(false)} variant="outline">
               Faire une autre réservation
@@ -248,9 +229,14 @@ export default function BookingForm() {
               )}
             </Button>
             <p className="text-slate-500 text-xs text-center sm:text-left">
-              En soumettant, vous acceptez d&apos;être contacté par notre équipe via WhatsApp ou téléphone.
+              En soumettant, vous acceptez d&apos;être contacté par notre équipe par téléphone ou message.
             </p>
           </div>
+          {submitError && (
+            <p role="alert" className="mt-4 text-center text-sm text-red-400">
+              {submitError}
+            </p>
+          )}
         </form>
       </div>
     </section>
