@@ -70,8 +70,8 @@ const contacts: ContactItem[] = [
     icon: FacebookIcon,
     title: "Facebook Messenger",
     description:
-      "Contactez-nous via notre page Facebook pour plus d'informations sur nos services.",
-    buttonLabel: "Écrire sur Messenger",
+      "Discutez directement avec notre équipe via Facebook Messenger et obtenez rapidement les informations dont vous avez besoin.",
+    buttonLabel: "Discuter sur Messenger",
     href: "https://www.messenger.com/t/1303297666195418",
     iconBg: "bg-blue-500/15 border border-blue-500/30",
     iconColor: "text-blue-400",
@@ -83,8 +83,8 @@ const contacts: ContactItem[] = [
     icon: InstagramIcon,
     title: "Instagram",
     description:
-      "Suivez-nous pour voir nos diagnostics en action et les témoignages de nos clients.",
-    buttonLabel: "Voir notre page",
+      "Discutez directement avec notre équipe via Instagram et obtenez rapidement les informations dont vous avez besoin.",
+    buttonLabel: "Discuter sur Instagram",
     href: "https://www.instagram.com/direct/t/17842087401616423/",
     iconBg: "bg-pink-500/15 border border-pink-500/30",
     iconColor: "text-pink-400",
