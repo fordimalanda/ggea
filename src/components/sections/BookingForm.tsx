@@ -116,7 +116,7 @@ export default function BookingForm() {
 
     // Open WhatsApp after short delay
     setTimeout(() => {
-      window.open(`https://wa.me/243000000000?text=${msg}`, "_blank", "noopener,noreferrer");
+      window.open(`https://wa.me/243829688222?text=${msg}`, "_blank", "noopener,noreferrer");
     }, 800);
   };
 

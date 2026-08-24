@@ -59,7 +59,7 @@ const contacts: ContactItem[] = [
     description:
       "Discutez directement avec notre équipe et réservez votre diagnostic en quelques messages.",
     buttonLabel: "Discuter sur WhatsApp",
-    href: "https://wa.me/243000000000?text=Bonjour%20GGEA%2C%20je%20voudrais%20r%C3%A9server%20un%20diagnostic.",
+    href: "https://wa.me/243829688222?text=Bonjour%20GGEA%2C%20je%20voudrais%20r%C3%A9server%20un%20diagnostic.",
     iconBg: "bg-emerald-500/15 border border-emerald-500/30",
     iconColor: "text-emerald-400",
     btnVariant: "default",
@@ -178,7 +178,7 @@ export default function ContactGrid() {
             <div className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
             <span className="text-slate-400 text-sm">Appel direct disponible:</span>
             <a
-              href="tel:+243000000000"
+              href="tel:+243829688222"
               className="text-white font-semibold hover:text-emerald-400 transition-colors"
             >
               +243 85 44 55 818

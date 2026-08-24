@@ -50,7 +50,7 @@ export default function Footer() {
             {/* Social links */}
             <div className="flex gap-3">
               {[
-                { icon: WhatsAppIcon, href: "https://wa.me/243000000000", label: "WhatsApp", color: "hover:bg-emerald-500/20 hover:border-emerald-500/50 hover:text-emerald-400" },
+                { icon: WhatsAppIcon, href: "https://wa.me/243829688222", label: "WhatsApp", color: "hover:bg-emerald-500/20 hover:border-emerald-500/50 hover:text-emerald-400" },
                 { icon: FacebookIcon, href: "https://facebook.com/GGEAKinshasa", label: "Facebook", color: "hover:bg-blue-500/20 hover:border-blue-500/50 hover:text-blue-400" },
                 { icon: InstagramIcon, href: "https://instagram.com/ggea.kinshasa", label: "Instagram", color: "hover:bg-pink-500/20 hover:border-pink-500/50 hover:text-pink-400" },
               ].map(({ icon: Icon, href, label, color }) => (
@@ -98,7 +98,7 @@ export default function Footer() {
               </li>
               <li className="flex items-center gap-3">
                 <Phone className="size-4 text-emerald-400 shrink-0" />
-                <a href="tel:+243000000000" className="hover:text-white transition-colors">
+                <a href="tel:+243829688222" className="hover:text-white transition-colors">
                   +243 85 44 55 818
                 </a>
               </li>
