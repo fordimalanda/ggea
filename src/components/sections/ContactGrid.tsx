@@ -72,7 +72,7 @@ const contacts: ContactItem[] = [
     description:
       "Contactez-nous via notre page Facebook pour plus d'informations sur nos services.",
     buttonLabel: "Écrire sur Messenger",
-    href: "https://m.me/GGEAKinshasa",
+    href: "https://www.messenger.com/t/1303297666195418",
     iconBg: "bg-blue-500/15 border border-blue-500/30",
     iconColor: "text-blue-400",
     btnVariant: "secondary",
