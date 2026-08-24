@@ -85,7 +85,7 @@ const contacts: ContactItem[] = [
     description:
       "Suivez-nous pour voir nos diagnostics en action et les témoignages de nos clients.",
     buttonLabel: "Voir notre page",
-    href: "https://instagram.com/ggea.kinshasa",
+    href: "https://www.instagram.com/garage_ggea/",
     iconBg: "bg-pink-500/15 border border-pink-500/30",
     iconColor: "text-pink-400",
     btnVariant: "secondary",
