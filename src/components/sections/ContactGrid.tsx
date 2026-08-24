@@ -181,6 +181,18 @@ export default function ContactGrid() {
               href="tel:+243829688222"
               className="text-white font-semibold hover:text-emerald-400 transition-colors"
             >
+              +243 82 96 88 222
+            </a>
+          </div>
+        </div>
+        <div className="mt-3 text-center">
+          <div className="inline-flex items-center gap-3 bg-slate-900/80 border border-slate-700/60 rounded-full px-6 py-3">
+            <div className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
+            <span className="text-slate-400 text-sm">Appel direct disponible:</span>
+            <a
+              href="tel:+243854455818"
+              className="text-white font-semibold hover:text-emerald-400 transition-colors"
+            >
               +243 85 44 55 818
             </a>
           </div>

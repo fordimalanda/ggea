@@ -104,6 +104,12 @@ export default function Footer() {
               <li className="flex items-center gap-3">
                 <Phone className="size-4 text-emerald-400 shrink-0" />
                 <a href="tel:+243829688222" className="hover:text-white transition-colors">
+                  +243 82 96 88 222
+                </a>
+              </li>
+              <li className="flex items-center gap-3">
+                <Phone className="size-4 text-emerald-400 shrink-0" />
+                <a href="tel:+243854455818" className="hover:text-white transition-colors">
                   +243 85 44 55 818
                 </a>
               </li>
